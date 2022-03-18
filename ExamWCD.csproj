@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4A6A83A0-F537-410C-B29D-58325F78C5DC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExamWCD</RootNamespace>
+    <AssemblyName>ExamWCD</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44389</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Data\Context.cs" />
+    <Compile Include="Downloads\Hash.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203181218591_SeedData.cs" />
+    <Compile Include="Migrations\202203181218591_SeedData.Designer.cs">
+      <DependentUpon>202203181218591_SeedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Downloads\.gitignore" />
+    <Content Include="Downloads\001.PNG" />
+    <Content Include="Downloads\002.PNG" />
+    <Content Include="Downloads\003.PNG" />
+    <Content Include="Downloads\1.1.png" />
+    <Content Include="Downloads\1.2.png" />
+    <Content Include="Downloads\1.txt" />
+    <Content Include="Downloads\11.PNG" />
+    <Content Include="Downloads\12.PNG" />
+    <Content Include="Downloads\121.jpg" />
+    <Content Include="Downloads\122.jpg" />
+    <Content Include="Downloads\123.png" />
+    <Content Include="Downloads\123123.png" />
+    <Content Include="Downloads\123123123.png" />
+    <Content Include="Downloads\1233341.jfif" />
+    <Content Include="Downloads\12345.1.png" />
+    <Content Include="Downloads\12345.2.png" />
+    <Content Include="Downloads\12345.3.png" />
+    <Content Include="Downloads\12345.4.png" />
+    <Content Include="Downloads\1235.jfif" />
+    <Content Include="Downloads\1235.png" />
+    <Content Include="Downloads\124.jpg" />
+    <Content Include="Downloads\125.jpg" />
+    <Content Include="Downloads\132.png" />
+    <Content Include="Downloads\154.png" />
+    <Content Include="Downloads\209141160_4408080825919046_1175647899868756690_n.jpg" />
+    <Content Include="Downloads\2123.jpg" />
+    <Content Include="Downloads\216128830_1641199232749014_1133378660955686846_n.jpg" />
+    <Content Include="Downloads\2223.jpg" />
+    <Content Include="Downloads\231.PNG" />
+    <Content Include="Downloads\234.PNG" />
+    <Content Include="Downloads\240593218_2769730353328147_1025445380669088448_n.jpg" />
+    <Content Include="Downloads\244692053_383323246786669_8330457653565222759_n.jpg" />
+    <Content Include="Downloads\244977897_682087026099820_2294973923112150372_n.jpg" />
+    <Content Include="Downloads\321.jpg" />
+    <Content Include="Downloads\3214.png" />
+    <Content Include="Downloads\452.PNG" />
+    <Content Include="Downloads\48945882.jpg" />
+    <Content Include="Downloads\48945882.png" />
+    <Content Include="Downloads\5346.PNG" />
+    <Content Include="Downloads\9d7987e0332348b3be499934d3275194_1600094574029264113-removebg-preview.png" />
+    <Content Include="Downloads\9d7987e0332348b3be499934d3275194_1600094574029264113.jpg" />
+    <Content Include="Downloads\about.png" />
+    <Content Include="Downloads\about_us.png" />
+    <Content Include="Downloads\about_us1.png" />
+    <Content Include="Downloads\add_to_cart.png" />
+    <Content Include="Downloads\add_to_cart_vjp.png" />
+    <Content Include="Downloads\admin_sign_in.png" />
+    <Content Include="Downloads\admin_sign_up.png" />
+    <Content Include="Downloads\ars.jpg" />
+    <Content Include="Downloads\banh-mi.png" />
+    <Content Include="Downloads\bars.svg" />
+    <Content Include="Downloads\bibimbap.png" />
+    <Content Include="Downloads\blog %281%29.png" />
+    <Content Include="Downloads\Blog.png" />
+    <Content Include="Downloads\blog_vjp.png" />
+    <Content Include="Downloads\bubble-tea.png" />
+    <Content Include="Downloads\cac\121.PNG" />
+    <Content Include="Downloads\cac\122.PNG" />
+    <Content Include="Downloads\cac\1234.PNG" />
+    <Content Include="Downloads\cac\1235.PNG" />
+    <Content Include="Downloads\cac\1236.PNG" />
+    <Content Include="Downloads\cac\1237.PNG" />
+    <Content Include="Downloads\cac\1238.PNG" />
+    <Content Include="Downloads\cac\1239.PNG" />
+    <Content Include="Downloads\cac\Các lệnh PHP cần nhớ.txt" />
+    <Content Include="Downloads\cac\default-thumbnail-300x225.jpg" />
+    <Content Include="Downloads\Capture.PNG" />
+    <Content Include="Downloads\cart.png" />
+    <Content Include="Downloads\cdcatalog.xml" />
+    <Content Include="Downloads\check1.PNG" />
+    <Content Include="Downloads\checkout.png" />
+    <Content Include="Downloads\checkout_vjp.png" />
+    <Content Include="Downloads\chicken-leg.png" />
+    <Content Include="Downloads\contact.png" />
+    <Content Include="Downloads\contact_us.png" />
+    <Content Include="Downloads\create_blog %281%29.png" />
+    <Content Include="Downloads\create_blog.png" />
+    <Content Include="Downloads\create_category.png" />
+    <Content Include="Downloads\create_ingredient.png" />
+    <Content Include="Downloads\create_product.png" />
+    <Content Include="Downloads\Các lệnh PHP cần nhớ.txt" />
+    <Content Include="Downloads\dashboard.png" />
+    <Content Include="Downloads\default-thumbnail-300x225.jpg" />
+    <Content Include="Downloads\delete_blog.png" />
+    <Content Include="Downloads\delete_category.png" />
+    <Content Include="Downloads\delete_ingredient.png" />
+    <Content Include="Downloads\delete_product.png" />
+    <Content Include="Downloads\demi-deherrera-L-sm1B4L1Ns-unsplash %281%29.jpg" />
+    <Content Include="Downloads\dessert.png" />
+    <Content Include="Downloads\detail_blog.png" />
+    <Content Include="Downloads\detail_category.png" />
+    <Content Include="Downloads\detail_ingredient.png" />
+    <Content Include="Downloads\detail_order.png" />
+    <Content Include="Downloads\detail_product.png" />
+    <Content Include="Downloads\de_dust2_04.jpg" />
+    <Content Include="Downloads\download.jfif" />
+    <Content Include="Downloads\download.png" />
+    <Content Include="Downloads\edit_blog.png" />
+    <Content Include="Downloads\edit_category.png" />
+    <Content Include="Downloads\edit_ingredient.png" />
+    <Content Include="Downloads\edit_product.png" />
+    <Content Include="Downloads\ERdiagram.png" />
+    <Content Include="Downloads\fast-food.png" />
+    <Content Include="Downloads\FAT -  từ CV đến PV - 1709_Zoom.jpg" />
+    <Content Include="Downloads\food-cart.png" />
+    <Content Include="Downloads\food-svgrepo-com.svg" />
+    <Content Include="Downloads\fried-rice.png" />
+    <Content Include="Downloads\identity-guide.html" />
+    <Content Include="Downloads\image.jpeg" />
+    <Content Include="Downloads\image.png" />
+    <Content Include="Downloads\imageedit_3_9401592931.png" />
+    <Content Include="Downloads\imgonline-com-ua-ReplaceColor-nHYYVhW5WA.jpg" />
+    <Content Include="Downloads\index.js" />
+    <Content Include="Downloads\information.png" />
+    <Content Include="Downloads\IngredientSeeder.php" />
+    <Content Include="Downloads\instagram_f_icon-icons.com_65485.png" />
+    <Content Include="Downloads\Install VALORANT.exe" />
+    <Content Include="Downloads\istockphoto-623301114-170667a.jpg" />
+    <Content Include="Downloads\l.htm" />
+    <Content Include="Downloads\Lam_viec_voi_PHP_4.txt" />
+    <Content Include="Downloads\Lam_viec_voi_PHP_5.txt" />
+    <Content Include="Downloads\laravel-featured-removebg-preview.png" />
+    <Content Include="Downloads\laravel-featured.png" />
+    <Content Include="Downloads\list_blog.png" />
+    <Content Include="Downloads\list_category.png" />
+    <Content Include="Downloads\list_ingredient.png" />
+    <Content Include="Downloads\list_message.png" />
+    <Content Include="Downloads\list_order.png" />
+    <Content Include="Downloads\list_product.png" />
+    <Content Include="Downloads\loading %281%29.gif" />
+    <Content Include="Downloads\loading-unscreen.gif" />
+    <Content Include="Downloads\loading.gif" />
+    <Content Include="Downloads\login.md.html" />
+    <Content Include="Downloads\login.png" />
+    <Content Include="Downloads\login_ad.png" />
+    <Content Include="Downloads\logo-removebg-preview.png" />
+    <Content Include="Downloads\logo.png" />
+    <Content Include="Downloads\LogOut.png" />
+    <Content Include="Downloads\member-information.md.html" />
+    <Content Include="Downloads\memen%27t.jpg" />
+    <Content Include="Downloads\MSTeamsSetup_c_w_.exe" />
+    <Content Include="Downloads\NamVT_Microservice.mp4" />
+    <Content Include="Downloads\new_admin.sql" />
+    <Content Include="Downloads\ocxme.txt" />
+    <Content Include="Downloads\okela %281%29.png" />
+    <Content Include="Downloads\okela %282%29.png" />
+    <Content Include="Downloads\okela.png" />
+    <Content Include="Downloads\omegalul.PNG" />
+    <Content Include="Downloads\OrderSpecification.java" />
+    <Content Include="Downloads\personal.png" />
+    <Content Include="Downloads\pho.png" />
+    <Content Include="Downloads\Picture1.png" />
+    <Content Include="Downloads\PngItem_5785080-removebg-preview.png" />
+    <Content Include="Downloads\PngItem_5785080.png" />
+    <Content Include="Downloads\products %281%29.sql" />
+    <Content Include="Downloads\products %282%29.sql" />
+    <Content Include="Downloads\products.sql" />
+    <Content Include="Downloads\ProductSeeder %281%29.php" />
+    <Content Include="Downloads\ProductSeeder.php" />
+    <Content Include="Downloads\regex-e.PNG" />
+    <Content Include="Downloads\RESTPagination.java" />
+    <Content Include="Downloads\RESTResponse.java" />
+    <Content Include="Downloads\seafood.png" />
+    <Content Include="Downloads\search.png" />
+    <Content Include="Downloads\search.svg" />
+    <Content Include="Downloads\SearchCriteria.java" />
+    <Content Include="Downloads\search_vjp.png" />
+    <Content Include="Downloads\shopping-cart.svg" />
+    <Content Include="Downloads\si9ncuiuifkwljzcjhhz.jpg" />
+    <Content Include="Downloads\sign_in.png" />
+    <Content Include="Downloads\sign_up %281%29.png" />
+    <Content Include="Downloads\sign_up.png" />
+    <Content Include="Downloads\steak.png" />
+    <Content Include="Downloads\street_manager.sql" />
+    <Content Include="Downloads\sushi.png" />
+    <Content Include="Downloads\Telegram Desktop\audio_2022-03-17_12-08-25.ogg" />
+    <Content Include="Downloads\Telegram Desktop\chuẩn bị phỏng vấn.mp3" />
+    <Content Include="Downloads\Untitled Diagram.drawio.png" />
+    <Content Include="Downloads\Untitled Diagram.drawio.xml" />
+    <Content Include="Downloads\Untitled Diagram.png" />
+    <Content Include="Downloads\Untitled_Diagram.drawio.png" />
+    <Content Include="Downloads\url.htm" />
+    <Content Include="Downloads\Use Case Diagram.png" />
+    <Content Include="Downloads\Use_case_diagram.png" />
+    <Content Include="Downloads\use_case_diagram_assignment %281%29.png" />
+    <Content Include="Downloads\use_case_diagram_assignment %282%29.png" />
+    <Content Include="Downloads\use_case_diagram_assignment.png" />
+    <Content Include="Downloads\use_case_diagram_assignment.svg" />
+    <Content Include="Downloads\use_case_diagram_exam.drawio %281%29.png" />
+    <Content Include="Downloads\use_case_diagram_exam.drawio %282%29.png" />
+    <Content Include="Downloads\use_case_diagram_exam.drawio.png" />
+    <Content Include="Downloads\vegan-food.png" />
+    <Content Include="Downloads\view_cart.png" />
+    <Content Include="Downloads\view_product.png" />
+    <Content Include="Downloads\view_product_detail.png" />
+    <Content Include="Downloads\vy-huynh-rcHHKG01IPY-unsplash %281%29.jpg" />
+    <Content Include="Downloads\Ảnh nền Zoom.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Downloads\123.drawio" />
+    <Content Include="Downloads\123123.drawio" />
+    <Content Include="Downloads\1256.drawio" />
+    <Content Include="Downloads\3.-Mau-01-phieu-dang-ky-thi-tuyen.doc" />
+    <Content Include="Downloads\4.-Huong-dan-ghi-phieu-dang-ky-thi-tuyen.doc" />
+    <Content Include="Downloads\5_ Kho tri thuc_Tieu chuan XML schema 23072014%281%29.doc" />
+    <Content Include="Downloads\a.drawio" />
+    <Content Include="Downloads\bezier.method.ac.rar" />
+    <Content Include="Downloads\De-thuc-hanh-WAD.pdf" />
+    <Content Include="Downloads\demo-jpa.zip" />
+    <Content Include="Downloads\desktop.ini" />
+    <Content Include="Downloads\Dillinger.md" />
+    <Content Include="Downloads\docker-compose.yml" />
+    <Content Include="Downloads\Dockerfile" />
+    <Content Include="Downloads\Document.rtf" />
+    <Content Include="Downloads\Documents - Shortcut.lnk" />
+    <Content Include="Downloads\Exam_ISA.docx" />
+    <Content Include="Downloads\favicon_io.zip" />
+    <Content Include="Downloads\Firebase.zip" />
+    <Content Include="Downloads\here.drawio" />
+    <Content Include="Downloads\introduction-to-github.pdf" />
+    <Content Include="Downloads\ISA_Lab_2.docx" />
+    <Content Include="Downloads\java-core.md" />
+    <Content Include="Downloads\laravel-tips-2020-04.pdf" />
+    <Content Include="Downloads\message q testing.postman_collection.json" />
+    <Content Include="Downloads\microservice-spring %281%29.zip" />
+    <Content Include="Downloads\microservice-spring 2.zip" />
+    <Content Include="Downloads\microservice-springhero.zip" />
+    <Content Include="Downloads\microservice.doc.docx" />
+    <Content Include="Downloads\microservice.odt" />
+    <Content Include="Downloads\MiniProject.zip" />
+    <Content Include="Downloads\Ngo_Minh_Quang_CV.docx" />
+    <Content Include="Downloads\Ngo_Minh_Quang_Resume.pdf" />
+    <Content Include="Downloads\note.md" />
+    <Content Include="Downloads\Phiếu-đk.doc" />
+    <Content Include="Downloads\RAD.docx" />
+    <Content Include="Downloads\ShopeeText-Light.ttf" />
+    <Content Include="Downloads\spring-boot.md" />
+    <Content Include="Downloads\spring-fcm-4786e-firebase-adminsdk-80ssf-f5f9e3a47f.json" />
+    <Content Include="Downloads\spring-jpa-relationship-master %281%29.zip" />
+    <Content Include="Downloads\ss6.docx" />
+    <Content Include="Downloads\street_manager.doc" />
+    <Content Include="Downloads\Telegram Desktop\Building+a+REST+API+with+Spring.pdf" />
+    <Content Include="Downloads\Telegram Desktop\demo-vue.zip" />
+    <Content Include="Downloads\Telegram Desktop\witch-vue.zip" />
+    <Content Include="Downloads\Telegram Desktop\witch-web.zip" />
+    <Content Include="Downloads\testing-noti-fd929-firebase-adminsdk-kwk4w-ec91e8484f.json" />
+    <Content Include="Downloads\Untitled Diagram.drawio" />
+    <Content Include="Downloads\Untitled Document %281%29.md" />
+    <Content Include="Downloads\Untitled Document.md" />
+    <Content Include="Downloads\use_case_diagram_assignment.drawio" />
+    <Content Include="Downloads\use_case_diagram_exam.drawio" />
+    <Content Include="Downloads\use_case_ecommerce.drawio" />
+    <Content Include="Downloads\use_case_project_sem2.drawio" />
+    <Content Include="Downloads\viet-kitchen-289d4-firebase-adminsdk-ye256-a3c8393259.json" />
+    <Content Include="Downloads\Web Services Architecture.docx" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202203181218591_SeedData.resx">
+      <DependentUpon>202203181218591_SeedData.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56807</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44389/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
